@@ -18,6 +18,9 @@ This plugin only works on HTML, so YMMV.
 
 At this point, everything should theoretically work.
 
+## Notes
+Due to the way CakePHP does output buffering, this will only work when debug is less than 2.
+
 ## TODO:
 1. Gzip more than just HTML
 2. Other, configurable methods of compression
