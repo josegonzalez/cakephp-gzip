@@ -1,0 +1,72 @@
+h1. Gzip Component
+
+Easily Gzip your production application's HTML output with the Gzip Component Plugin
+
+h2. Background
+
+I was attempting to optimize some small sites according to what YSlow said was inefficient, and saw some code at "debuggable.com":http://debuggable.com/posts/issues-with-output-buffering-in-cakephp:480f4dd5-b4fc-42a7-a5ab-4544cbdd56cb that mentioned gzipping html output. So I wrapped that into a method in the AppController and used it in Production.
+
+Not happy with copy-pasting that one method each and every time, I refactored it into a Component (woo-hoo CakePHP Components!), which I've just now refactored as a plugin. Thats a lot of refactoring.
+
+This plugin only works on HTML, so YMMV.
+
+h2. Installation
+
+_[Manual]_
+
+# Download this: http://github.com/josegonzalez/gzip-component/zipball/master
+# Unzip that download.
+# Copy the resulting folder to app/plugins
+# Rename the folder you just copied to @gzip@
+
+_[GIT Submodule]_
+
+In your app directory type:
+<pre><code>git submodule add git://github.com/josegonzalez/gzip-component.git plugins/gzip
+git submodule init
+git submodule update
+</code></pre>
+
+_[GIT Clone]_
+
+In your plugin directory type
+<pre><code>git clone git://github.com/josegonzalez/gzip-component.git gzip</code></pre>
+
+h2. Usage
+
+# Include the component in your controller (AppController or otherwise)
+    @var $components = array('Gzip.Gzip');@
+
+At this point, everything should theoretically work.
+
+h3. Notes
+
+Due to the way CakePHP does output buffering, this will only work when debug is less than 2.
+
+h2. TODO:
+
+# Gzip more than just HTML
+# Other, configurable methods of compression
+# Turn off compression via a url param or a secret url
+
+h2. License
+
+Copyright (c) 2010 Jose Diaz-Gonzalez
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
