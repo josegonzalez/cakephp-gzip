@@ -57,7 +57,7 @@ If you are already using `CakePlugin::loadAll();`, then this is not necessary.
 
 ## Usage
 
-# Include the component in your controller (AppController or otherwise)
+Include the component in your controller (AppController or otherwise):
 
 ```php
 <?php
