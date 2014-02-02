@@ -47,6 +47,14 @@ In your plugin directory type
 
     git clone git://github.com/josegonzalez/cakephp-gzip.git Gzip
 
+### Enable plugin
+
+In 2.0 you need to enable the plugin your `app/Config/bootstrap.php` file:
+
+		CakePlugin::load('Sanction');
+
+If you are already using `CakePlugin::loadAll();`, then this is not necessary.
+
 ## Usage
 
 # Include the component in your controller (AppController or otherwise)
