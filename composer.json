@@ -1,0 +1,31 @@
+{
+  "name": "josegonzalez/cakephp-gzip",
+  "version": "2.0.2",
+  "description": "cakephp component plugin that auto-gzips html output",
+  "type": "cakephp-plugin",
+  "keywords": [
+    "cakephp",
+    "gzip"
+  ],
+  "homepage": "http://github.com/josegonzalez/cakephp-gzip",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jose Diaz-Gonzalez",
+      "email": "email@josediazgonzalez.com",
+      "homepage": "http://josediazgonzalez.com",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "composer/installers": "*"
+  },
+  "support": {
+    "email": "cakephp+gzip@josediazgonzalez.com",
+    "issues": "https://github.com/josegonzalez/cakephp-gzip/issues",
+    "source": "https://github.com/josegonzalez/cakephp-gzip"
+  },
+  "extra": {
+    "installer-name": "Gzip"
+  }
+}

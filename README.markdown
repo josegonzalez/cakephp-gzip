@@ -1,8 +1,10 @@
-h1. Gzip Component
+[![Build Status](https://travis-ci.org/josegonzalez/cakephp-gzip.png?branch=master)](https://travis-ci.org/josegonzalez/cakephp-gzip) [![Coverage Status](https://coveralls.io/repos/josegonzalez/cakephp-gzip/badge.png?branch=master)](https://coveralls.io/r/josegonzalez/cakephp-gzip?branch=master) [![Total Downloads](https://poser.pugx.org/josegonzalez/cakephp-gzip/d/total.png)](https://packagist.org/packages/josegonzalez/cakephp-gzip) [![Latest Stable Version](https://poser.pugx.org/josegonzalez/cakephp-gzip/v/stable.png)](https://packagist.org/packages/josegonzalez/cakephp-gzip)
+
+# Gzip Component
 
 Easily Gzip your production application's HTML output with the Gzip Component Plugin
 
-h2. Background
+## Background
 
 I was attempting to optimize some small sites according to what YSlow said was inefficient, and saw some code at "debuggable.com":http://debuggable.com/posts/issues-with-output-buffering-in-cakephp:480f4dd5-b4fc-42a7-a5ab-4544cbdd56cb that mentioned gzipping html output. So I wrapped that into a method in the AppController and used it in Production.
 
@@ -10,46 +12,67 @@ Not happy with copy-pasting that one method each and every time, I refactored it
 
 This plugin only works on HTML, so YMMV.
 
-h2. Installation
+## Installation
+
+_[Using [Composer](http://getcomposer.org/)]_
+
+Add the plugin to your project's `composer.json` - something like this:
+
+    {
+        "require": {
+            "josegonzalez/cakephp-gzip": "dev-master"
+        }
+    }
+
+Because this plugin has the type `cakephp-plugin` set in it's own `composer.json`, composer knows to install it inside your `/Plugins` directory, rather than in the usual vendors file. It is recommended that you add `/Plugins/Upload` to your .gitignore file. (Why? [read this](http://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).)
 
 _[Manual]_
 
-# Download this: http://github.com/josegonzalez/gzip-component/zipball/master
-# Unzip that download.
-# Copy the resulting folder to app/plugins
-# Rename the folder you just copied to @gzip@
+* Download this: [https://github.com/josegonzalez/cakephp-gzip/zipball/master](https://github.com/josegonzalez/cakephp-gzip/zipball/master)
+* Unzip that download.
+* Copy the resulting folder to `app/Plugin`
+* Rename the folder you just copied to `Gzip`
 
 _[GIT Submodule]_
 
 In your app directory type:
-<pre><code>git submodule add git://github.com/josegonzalez/gzip-component.git plugins/gzip
-git submodule init
-git submodule update
-</code></pre>
+
+    git submodule add git://github.com/josegonzalez/cakephp-gzip.git Plugin/Gzip
+    git submodule init
+    git submodule update
 
 _[GIT Clone]_
 
 In your plugin directory type
-<pre><code>git clone git://github.com/josegonzalez/gzip-component.git gzip</code></pre>
 
-h2. Usage
+    git clone git://github.com/josegonzalez/cakephp-gzip.git Gzip
+
+## Usage
 
 # Include the component in your controller (AppController or otherwise)
-    @var $components = array('Gzip.Gzip');@
+
+```php
+<?php
+App::uses('Controller', 'Controller');
+class AppController extends Controller {
+    public $components = array('Gzip.Gzip');
+}
+?>
+```
 
 At this point, everything should theoretically work.
 
-h3. Notes
+## Notes
 
 Due to the way CakePHP does output buffering, this will only work when debug is less than 2.
 
-h2. TODO:
+## TODO:
 
-# Gzip more than just HTML
-# Other, configurable methods of compression
-# Turn off compression via a url param or a secret url
+- Gzip more than just HTML
+- Other, configurable methods of compression
+- Turn off compression via a url param or a secret url
 
-h2. License
+## License
 
 Copyright (c) 2010 Jose Diaz-Gonzalez
 
