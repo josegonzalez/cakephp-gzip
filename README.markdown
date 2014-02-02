@@ -6,7 +6,7 @@ Easily Gzip your production application's HTML output with the Gzip Component Pl
 
 ## Background
 
-I was attempting to optimize some small sites according to what YSlow said was inefficient, and saw some code at "debuggable.com":http://debuggable.com/posts/issues-with-output-buffering-in-cakephp:480f4dd5-b4fc-42a7-a5ab-4544cbdd56cb that mentioned gzipping html output. So I wrapped that into a method in the AppController and used it in Production.
+I was attempting to optimize some small sites according to what YSlow said was inefficient, and saw some code at [debuggable.com](http://debuggable.com/posts/issues-with-output-buffering-in-cakephp:480f4dd5-b4fc-42a7-a5ab-4544cbdd56cb) that mentioned gzipping html output. So I wrapped that into a method in the AppController and used it in Production.
 
 Not happy with copy-pasting that one method each and every time, I refactored it into a Component (woo-hoo CakePHP Components!), which I've just now refactored as a plugin. Thats a lot of refactoring.
 
