@@ -12,14 +12,12 @@ App::uses('Component', 'Controller');
  * @package     gzip
  * @subpackage  gzip.controllers.components
  **/
-
 class GzipComponent extends Component {
-
 /**
  * Called before the Controller::beforeFilter().
  * Enables Gzip for all rendered HTML
  *
- * @param object  A reference to the controller
+ * @param \Controller|object $controller Controller reference.
  * @return void
  */
 	public function startup(Controller $controller) {
@@ -30,5 +28,4 @@ class GzipComponent extends Component {
 			header("Expires: " . gmdate('D, d M Y H:i:s', time() - 1) . ' GMT');
 		}
 	}
-
 }
