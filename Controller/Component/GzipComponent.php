@@ -13,6 +13,7 @@ App::uses('Component', 'Controller');
  * @subpackage  gzip.controllers.components
  **/
 class GzipComponent extends Component {
+
 /**
  * Called before the Controller::beforeFilter().
  * Enables Gzip for all rendered HTML
